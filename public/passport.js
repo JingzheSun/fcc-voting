@@ -22,6 +22,7 @@ module.exports = function(passport) {
     function(token, tokenSecret, profile, done) {
         process.nextTick(function() {
             User.findOne({ 'twitter.id' : profile.id }, function(err, user) {
+                passport.name = profile.username;
                 if (err)
                     return done(err);
                 if (user) {
@@ -41,5 +42,4 @@ module.exports = function(passport) {
             });
         });
     }));
-
 };

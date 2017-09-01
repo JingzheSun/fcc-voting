@@ -1,0 +1,12 @@
+body{
+	background: lightgray;
+}
+
+#addNew{
+	padding: 5px;
+	text-align: center;
+}
+
+.btn{
+	margin:5px;
+}

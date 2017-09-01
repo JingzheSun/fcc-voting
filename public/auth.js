@@ -1,8 +1,9 @@
 module.exports = {
     'twitterAuth' : {
-        'consumerKey'      : ' ', // your App ID
-        'consumerSecret'  : ' ', // your App Secret
-        'callbackURL'   : ' '
+        'consumerKey'      : 'fphtzKSjvC8T0FhDoPm4aHNCO', // your App ID
+        'consumerSecret'  : 'KjWwDTmImp5pkphrT0wfHKOXcX1ALjTOfUWXpZgbpQg7o25hrS', // your App Secret
+        //'callbackURL'   : 'https://fcc-vote-appjs.herokuapp.com/'
+        'callbackURL'   : 'http://127.0.0.1:8070/login/callback'
     },
 
     'facebookAuth' : {

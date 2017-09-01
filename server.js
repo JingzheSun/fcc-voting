@@ -22,9 +22,9 @@ app.use(passport.session());
 app.use(compression());
 
 db.on('error', ()=> console.log('Database connecting fail'));
-db.once('open', () =>{
-	console.log('Database Connnected');
-	//require('./public/passport.js')(passport);
+db.on('connected', () =>{
+	console.log('Database Connected');
+	require('./public/passport.js')(passport);
 	router(app, passport);
 })
 
