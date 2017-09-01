@@ -75,7 +75,7 @@ export default class App extends React.Component{
 							{s.login && <a className="list-group-item" id="addNew" onClick={this.addNew}><i className="fa fa-plus" aria-hidden="true"></i>Add New</a>}
 						</div>
 						<div className="col-lg-9 col-md-9 col-sm-9">
-							{s.board ? <Board info={s.board} upt={this.upt} myName={s.myName}/>:
+							{s.board ? <Board info={s.board} upt={this.upt} myName={s.myName} login={s.login}/>:
 							!s.login ? "Visit as guest or login before creating polls":
 							typeof s.board == 'string' ? "Welcome to FCC voting" :
 							 <NewPoll/>

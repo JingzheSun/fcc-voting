@@ -65,7 +65,7 @@ export default class Board extends Component{
 					</select>
 					<input type="submit" value="Vote" className="btn btn-primary" onClick={this.update}/>
 				</form>
-				{(p.myName == p.info.creatorName) && <button className="btn btn-danger" onClick={this.delete}>Delete Poll</button>}
+				{p.login && (p.myName == p.info.creatorName) && <button className="btn btn-danger" onClick={this.delete}>Delete Poll</button>}
 				<div id="chart" ref={i => this.chartDiv = i}></div>
 			</div>
 		)

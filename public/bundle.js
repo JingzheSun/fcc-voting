@@ -28870,7 +28870,7 @@ var App = function (_React$Component) {
 						_react2.default.createElement(
 							'div',
 							{ className: 'col-lg-9 col-md-9 col-sm-9' },
-							s.board ? _react2.default.createElement(_Board2.default, { info: s.board, upt: this.upt, myName: s.myName }) : !s.login ? "Visit as guest or login before creating polls" : typeof s.board == 'string' ? "Welcome to FCC voting" : _react2.default.createElement(_NewPoll2.default, null)
+							s.board ? _react2.default.createElement(_Board2.default, { info: s.board, upt: this.upt, myName: s.myName, login: s.login }) : !s.login ? "Visit as guest or login before creating polls" : typeof s.board == 'string' ? "Welcome to FCC voting" : _react2.default.createElement(_NewPoll2.default, null)
 						)
 					)
 				)
@@ -29993,7 +29993,7 @@ var Board = function (_Component) {
 					),
 					_react2.default.createElement('input', { type: 'submit', value: 'Vote', className: 'btn btn-primary', onClick: this.update })
 				),
-				p.myName == p.info.creatorName && _react2.default.createElement(
+				p.login && p.myName == p.info.creatorName && _react2.default.createElement(
 					'button',
 					{ className: 'btn btn-danger', onClick: this.delete },
 					'Delete Poll'
