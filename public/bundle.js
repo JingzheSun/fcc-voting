@@ -28826,7 +28826,11 @@ var App = function (_React$Component) {
 	}, {
 		key: 'changeView',
 		value: function changeView(tf) {
-			this.setState({ showAll: tf });
+			if (this.state.login) {
+				this.setState({ showAll: tf, board: "" });
+			} else {
+				this.setState({ board: "" });
+			}
 		}
 	}, {
 		key: 'render',
@@ -28852,10 +28856,12 @@ var App = function (_React$Component) {
 						{ className: 'container row' },
 						_react2.default.createElement(
 							'div',
-							{ className: 'col-lg-3 col-md-3 col-sm-3 list-group', style: { "paddingLeft": 0 } },
+							{ className: 'col-lg-3 col-md-3 col-sm-3 list-group' },
 							s.polls.map(function (poll, i) {
 								if (s.login && !s.showAll) {
-									if (poll.creatorName == s.myName) return _react2.default.createElement(_Polls2.default, { key: poll._id, info: poll, click: _this3.select.bind(_this3, i) });
+									if (poll.creatorName == s.myName) {
+										return _react2.default.createElement(_Polls2.default, { key: poll._id, info: poll, click: _this3.select.bind(_this3, i) });
+									}
 								} else {
 									return _react2.default.createElement(_Polls2.default, { key: poll._id, info: poll, click: _this3.select.bind(_this3, i) });
 								}

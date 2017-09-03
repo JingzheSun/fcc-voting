@@ -70,8 +70,9 @@ export default class App extends React.Component{
 						<div className="col-lg-3 col-md-3 col-sm-3 list-group">
 							{s.polls.map((poll, i) => {
 								if (s.login && !s.showAll){
-									if(poll.creatorName == s.myName)
+									if(poll.creatorName == s.myName){
 										return <Polls key={poll._id} info={poll} click={this.select.bind(this, i)}/>	
+									}
 								}else{
 									return <Polls key={poll._id} info={poll} click={this.select.bind(this, i)}/>
 								}
