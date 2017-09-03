@@ -52,7 +52,11 @@ export default class App extends React.Component{
 	}
 
 	changeView(tf){
-		this.setState({showAll:tf});
+		if(this.state.login){
+			this.setState({showAll:tf, board: ""});
+		} else {
+			this.setState({board: ""});
+		}
 	}
 
 	render(){
@@ -63,7 +67,7 @@ export default class App extends React.Component{
 				<div className="container">
 					{s.login && <p>Welcome {s.myName}</p>}
 					<div className="container row">
-						<div className="col-lg-3 col-md-3 col-sm-3 list-group" style={{"paddingLeft":0}}>
+						<div className="col-lg-3 col-md-3 col-sm-3 list-group">
 							{s.polls.map((poll, i) => {
 								if (s.login && !s.showAll){
 									if(poll.creatorName == s.myName)
